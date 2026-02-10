@@ -80,6 +80,10 @@
 # TODO!
 # 
 Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
+Agent.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -116,10 +120,12 @@ dark_knight.save
 
 knight_rises = Movie.new
 knight_rises.title = "The Dark Knight Rises"
-knight_rises. year_released = 2012
+knight_rises.year_released = 2012
 knight_rises.rated = "PG-13"
 knight_rises.studio_id = warnerbros.id
 knight_rises.save
+
+
 
 # Batman Begins
 # Actors
@@ -269,7 +275,16 @@ dkr5.actor_id = hathaway.id
 dkr5.movie_id = knight_rises.id 
 dkr5.save
 
+# agents
 
+ari_gold = Agent.new
+ari_gold.name = "Ari Gold"
+ari_gold.save
+
+#agent represents
+bale = Actor.find_by({"name" => "Christian Bale"})
+bale.agent_id = ari_gold.id
+bale.save
 
 
 # Prints a header for the movies output
@@ -280,6 +295,11 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
+for movie in Movie.all
+  studio = Studio.find_by({"id" => movie.studio_id})
+  puts "#{movie.title.ljust(22)} #{movie.year_released} #{movie.rated.ljust(7)} #{studio.name}"
+end
+
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
@@ -289,6 +309,13 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
+for role in Role.all
+  movie = Movie.find_by({"id" => role.movie_id})
+  actor = Actor.find_by({"id" => role.actor_id})
+  puts "#{movie.title.ljust(22)} #{actor.name.ljust(20)} #{role.character_name}"
+end
+
+
 # Prints a header for the agent's list of represented actors output
 puts ""
 puts "Represented by agent"
@@ -297,3 +324,9 @@ puts ""
 
 # Query the actor data and loop through the results to display the agent's list of represented actors output.
 # TODO!
+
+represented_actor = Actor.where.not({agent_id: nil})
+for actor in represented_actor 
+  agent = Agent.find_by({"id" => actor.agent_id})
+  puts "#{actor.name}"
+end
