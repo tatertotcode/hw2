@@ -145,7 +145,35 @@ oldman.name = "Gary Oldman"
 oldman.save
 
 # roles
+bb1 = Role.new
+bb1.character_name = "Bruce Wayne"
+bb1.actor_id = bale.id
+bb1.movie_id = batman_begins.id 
+bb1.save
 
+bb2 = Role.new
+bb2.character_name = "Alfred"
+bb2.actor_id = caine.id
+bb2.movie_id = batman_begins.id 
+bb2.save
+
+bb3 = Role.new
+bb3.character_name = "Ra's Al Ghul"
+bb3.actor_id = neeson.id
+bb3.movie_id = batman_begins.id 
+bb3.save
+
+bb4 = Role.new
+bb4.character_name = "Rachel Dawes"
+bb4.actor_id = holmes.id
+bb4.movie_id = batman_begins.id 
+bb4.save
+
+bb5 = Role.new
+bb5.character_name = "Commissioner Gordon"
+bb5.actor_id = oldman.id
+bb5.movie_id = batman_begins.id 
+bb5.save
 
 # Dark Knight
 # actors
@@ -164,7 +192,35 @@ gyllenhaal.save
 
 # roles
 
+dk1 = Role.new
+dk1.character_name = "Bruce Wayne"
+dk1.actor_id = bale.id
+dk1.movie_id = dark_knight.id 
+dk1.save
 
+dk2 = Role.new
+dk2.character_name = "Joker"
+dk2.actor_id = ledger.id
+dk2.movie_id = dark_knight.id 
+dk2.save
+
+dk3 = Role.new
+dk3.character_name = "Harvey Dent"
+dk3.actor_id = eckhart.id
+dk3.movie_id = dark_knight.id 
+dk3.save
+
+dk4 = Role.new
+dk4.character_name = "Alfred"
+dk4.actor_id = caine.id
+dk4.movie_id = dark_knight.id 
+dk4.save
+
+dk5 = Role.new
+dk5.character_name = "Rachel Dawes"
+dk5.actor_id = gyllenhaal.id
+dk5.movie_id = dark_knight.id 
+dk5.save
 
 # Dark knight rises
 # actors
@@ -182,6 +238,36 @@ hathaway.name = "Anne Hathaway"
 hathaway.save
 
 # roles
+
+dkr1 = Role.new
+dkr1.character_name = "Bruce Wayne"
+dkr1.actor_id = bale.id
+dkr1.movie_id = knight_rises.id 
+dkr1.save
+
+dkr2 = Role.new
+dkr2.character_name = "Commissioner Gordon"
+dkr2.actor_id = oldman.id
+dkr2.movie_id = knight_rises.id 
+dkr2.save
+
+dkr3 = Role.new
+dkr3.character_name = "Bane"
+dkr3.actor_id = hardy.id
+dkr3.movie_id = knight_rises.id 
+dkr3.save
+
+dkr4 = Role.new
+dkr4.character_name = "John Blake"
+dkr4.actor_id = gordon_levitt.id
+dkr4.movie_id = knight_rises.id 
+dkr4.save
+
+dkr5 = Role.new
+dkr5.character_name = "Selina Kyle"
+dkr5.actor_id = hathaway.id
+dkr5.movie_id = knight_rises.id 
+dkr5.save
 
 
 
